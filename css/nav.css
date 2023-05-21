@@ -1,0 +1,293 @@
+:root{
+    --main-color:#FFFFFF;
+    --sub-color:#DB975F;
+    --font: 'Raleway';
+   
+ }
+
+
+* {
+    /* padding: 0;
+    margin: 0;
+    box-sizing: border-box; */
+    font-family: 'Raleway';
+    text-decoration: none;
+    /* outline: 1px dashed #000; */
+}
+
+.logo {
+    position: fixed;
+    height: 90px;
+    width: 200px;
+    left: 50px;
+    top: 12px;
+    padding-bottom: 0px;
+    border-radius: 0px;
+
+}
+.logo-container {
+    height: 50px;
+    width: 170px;
+    margin-left: 40px;
+}
+header {
+    width: 100%;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: var(--main-color);
+
+    transition: 0.6s;
+    box-shadow: 0 5px rgb(0 0 0 / 20%);
+}
+header.sticky {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0px 20px;
+}
+header .navbar {
+    position: relative;
+    line-height: 75px;
+}
+header .navbar .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    user-select: none;
+    font: var(--font);
+}
+.menu-item > a {
+    color: #000;
+    text-decoration: none;
+    font: var(--font);
+    font-size: 20px;;
+    margin: 7px;
+    padding: 25px 5px;
+    text-transform: capitalize;
+    font-weight: 300;
+}
+.menu-item > a:hover {
+    color: var(--sub-color);
+}
+.button {
+    display: none !important; 
+}
+.cart {
+    font-size: 28px;
+    margin: 25px;
+    padding-left: 50px;
+    cursor: pointer;
+    color: #000;
+}
+.cart:hover {
+    color: var(--sub-color);
+}
+/* This is for background slider */
+.img1 {
+    width: 100%;
+    height: 100%;
+}
+.dots {
+    text-align: center;
+}
+.bg-slider {
+    position: relative;
+    width: 100%;
+    background: #fff;
+}
+.slider {
+    height: 100%;
+    display: none;
+    overflow: hidden;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 56px;
+    padding: 15px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.1s;
+    user-select: none;
+}
+.prev:hover, .next:hover {
+    color: black;
+}
+.next {
+    right: 0;
+}
+.dots {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 20px;
+    cursor: pointer;
+}
+.dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.txt {
+    position: absolute;
+    color: #000;
+    letter-spacing: 2px;
+    line-height: 35px;
+    top: 40%;
+    left: 15%;
+    -webkit-animation-name: posi;
+    -webkit-animation-duration: 2s;
+    animation-name: posi;
+    animation-duration: 2s;
+    z-index: 1;
+    width: 500px;
+}
+
+@-webkit-keyframes posi {
+    from {left: 25%;}
+    to {left: 15%;}
+}
+
+@keyframes posi {
+    from {left: 25%;}
+    to {left: 15%;}
+}
+
+.txt h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 20px; 
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 0.75rem + 1.7142857142857144vw, 2.25rem);
+}
+.txt p {
+    font-size: 0.875rem;
+    font-size: clamp(0.875rem, 0.5rem + 0.8571428571428572vw, 1.25rem);
+}
+.img1 {
+    transform: scale(1.5, 1.5);
+    -webkit-animation-name: zoomin;
+    -webkit-animation-duration: 40s;
+    animation-name: zoomin;
+    animation-duration: 40s;
+}
+@-webkit-keyframes zoomin {
+    from {transform: scale(1, 1);}
+    to {transform: scale(1.5, 1.5);}
+}
+@keyframes zoomin {
+    from {transform: scale(1, 1);}
+    to {transform: scale(1.5, 1.5);}
+}
+
+/* Animation */
+.active, .dot:hover {
+    border-color: #000;
+}
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: 0.8}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: 0.8}
+    to {opacity: 1}
+}
+
+
+
+
+/* For smaller viewport */
+@media screen and (max-width: 700px) {
+    header {
+        padding: 15px 20px;
+    }
+    header.sticky {
+        padding: 0 20px;
+    }
+    .logo {
+        height: 60px;
+        width: 150px;
+    }
+    .logo-container {
+        height: auto;
+        width: auto;
+    }
+    header .navbar .menu {
+        position: fixed;
+        display: block;
+        background: #C46200;
+        min-width: 370px;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        padding: 70px 50px;
+        overflow-y: auto;
+        transition: 0.5s;
+        transition-property: right;
+    }
+    header .navbar .menu.active {
+        right: 0;
+    }
+    .menu-item {
+        position: relative;
+    }
+    .button {
+        display: block !important;
+    }
+    .close {
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 25px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .menu-btn {
+        cursor: pointer;
+        font-size: 20px;
+        padding: 5px;
+    }
+
+    /* for slider */
+    .slider {
+        height: 500px;
+    }
+    .txt {
+        width: 250px;
+        line-height: 25px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-animation-name: posi2;
+        -webkit-animation-duration: 2s;
+        animation-name: posi2;
+        animation-duration: 2s;
+    }
+    @-webkit-keyframes posi2 {
+        from {top: 35%;}
+        to {top: 50%;}
+    }
+    @keyframes posi2 {
+        from {top: 35%;}
+        to {top: 50%;}
+    }
+}
