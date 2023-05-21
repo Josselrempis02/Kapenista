@@ -1,6 +1,11 @@
+* {
+    scroll-behavior: smooth;
+}
+
 :root{
     --main-color:#FFFFFF;
     --sub-color:#DB975F;
+    --color: #e2e2e2;
     
    
  }
@@ -41,6 +46,53 @@
    
  }
 
- .menu2> a:hover {
+ .menu2 > a:hover {
     color: var(--sub-color);
 }
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    border: .2rem solid  var(--sub-color);
+    font-weight: bolder;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    padding: .8rem 3rem;
+}
+
+.btn:hover{
+    background: var(--sub-color);
+    color: var(--main-color);
+}
+
+.products .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    
+    
+}
+
+.products .box-container .box{
+    border-radius: .5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    background-color: var(--color);
+    flex: 1 1 35rem;
+}
+
+.products .box-container .box img{
+    height: auto;
+    filter: drop-shadow(0 .5rem 1rem black);
+}
+
+.products .box-container .content{
+   padding: 1.5rem;
+  
+} 
+

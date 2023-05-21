@@ -16,7 +16,7 @@
 }
 
 .logo {
-    position: fixed;
+    position: absolute;
     height: 90px;
     width: 200px;
     left: 50px;
@@ -33,7 +33,7 @@
 header {
     width: 100%;
     z-index: 999;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     display: flex;
