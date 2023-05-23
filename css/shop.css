@@ -59,7 +59,7 @@
     font-size: 20px;
     color: black;
     cursor: pointer;
-    background-color: #FFFFFF;
+    font: 'Raleway';
     padding: .8rem 3rem;
 }
 
@@ -68,31 +68,42 @@
     color: var(--main-color);
 }
 
-.products .box-container{
+.box-container{
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
-    gap:1.5rem;
     
     
 }
 
-.products .box-container .box{
-    border-radius: .5rem;
-    text-align: center;
+.box{
     position: relative;
-    overflow: hidden;
-    height: 100%;
-    background-color: var(--color);
-    flex: 1 1 35rem;
+   transition: all .40s;
 }
 
-.products .box-container .box img{
+.box img{
+    width: 500px;
     height: auto;
-    filter: drop-shadow(0 .5rem 1rem black);
+    transition: all .40s;
 }
 
-.products .box-container .content{
-   padding: 1.5rem;
-  
-} 
+
+
+.box img:hover{
+    transform: scale(0.9);
+}
+
+.price {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+    text-transform: capitalize;
+}
+.price a {
+    font-size: 14px;
+    text-transform: uppercase;
+}
 
